@@ -16,28 +16,9 @@ $PAGE->set_pagelayout($def_config->pagelayout);
 $PAGE->set_title(get_string('pluginname', 'block_superiframe'));
 $PAGE->navbar->add(get_string('pluginname', 'block_superiframe'));
 
+$renderer = $PAGE->get_renderer('block_superiframe');
+$renderer->display_view_page($def_config->url, $def_config->width, $def_config->height);
 
-// start output to browser
-echo $OUTPUT->header();
-echo $OUTPUT->heading(get_string('pluginname', 'block_superiframe'),5);
-
-// Some content goes here
-echo "I am some dummy content. Get rid of me fast!";	
-
-echo '<br>' . fullname($USER);
-
-echo '<br>' . $OUTPUT->user_picture($USER);
-
-$src = $def_config->url;
-
-$height = $def_config->height;
-$width = $def_config->width;
-
-echo "<iframe src='$src' 
-height='$height' width='$width' style='border:0'></iframe>";
-
-//send footer out to browser
-echo $OUTPUT->footer();
 return;
 
 

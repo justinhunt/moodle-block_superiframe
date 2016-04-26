@@ -9,3 +9,17 @@
 [14-Apr-2016 13:16:49 Europe/London] PHP Notice:  Undefined variable: url in /home/chipmunkyou/public_html/moodle/poodll3/blocks/superiframe/view.php on line 37
 [14-Apr-2016 13:17:27 Europe/London] PHP Notice:  Undefined variable: url in /home/chipmunkyou/public_html/moodle/poodll3/blocks/superiframe/view.php on line 37
 [14-Apr-2016 13:17:46 Europe/London] PHP Notice:  Undefined variable: url in /home/chipmunkyou/public_html/moodle/poodll3/blocks/superiframe/view.php on line 37
+[26-Apr-2016 06:49:55 Europe/London] PHP Notice:  Undefined property: stdClass::$src in /home/chipmunkyou/public_html/moodle/poodll3/blocks/superiframe/view.php on line 20
+[26-Apr-2016 06:49:55 Europe/London] PHP Notice:  Undefined variable: USER in /home/chipmunkyou/public_html/moodle/poodll3/blocks/superiframe/renderer.php on line 54
+[26-Apr-2016 06:49:55 Europe/London] PHP Notice:  Undefined variable: USER in /home/chipmunkyou/public_html/moodle/poodll3/blocks/superiframe/renderer.php on line 55
+[26-Apr-2016 06:49:55 Europe/London] Default exception handler: Coding error detected, it must be fixed by a programmer: PHP catchable fatal error Debug: Argument 1 passed to core_renderer::user_picture() must be an instance of stdClass, null given, called in [dirroot]/blocks/superiframe/renderer.php on line 55 and defined
+Error code: codingerror
+* line 411 of /lib/setuplib.php: coding_exception thrown
+* line 2411 of /lib/outputrenderers.php: call to default_error_handler()
+* line 55 of /blocks/superiframe/renderer.php: call to core_renderer->user_picture()
+* line 20 of /blocks/superiframe/view.php: call to block_superiframe_renderer->display_view_page()
+
+[26-Apr-2016 06:52:51 Europe/London] PHP Notice:  Undefined variable: iframename in /home/chipmunkyou/public_html/moodle/poodll3/blocks/superiframe/renderer.php on line 60
+[26-Apr-2016 06:52:51 Europe/London] PHP Notice:  Undefined variable: iframename in /home/chipmunkyou/public_html/moodle/poodll3/blocks/superiframe/renderer.php on line 61
+[26-Apr-2016 06:53:40 Europe/London] PHP Notice:  Undefined variable: iframename in /home/chipmunkyou/public_html/moodle/poodll3/blocks/superiframe/renderer.php on line 60
+[26-Apr-2016 06:53:40 Europe/London] PHP Notice:  Undefined variable: iframename in /home/chipmunkyou/public_html/moodle/poodll3/blocks/superiframe/renderer.php on line 61

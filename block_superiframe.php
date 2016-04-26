@@ -47,39 +47,9 @@ class block_superiframe extends block_base {
         $this->content->icons = array();
         $this->content->footer = '';
         $this->content->text = '';
-  
-        // user/index.php expect course context, so get one if page has module context.
-        $currentcontext = $this->page->context->get_course_context(false);
 
-
-       // $this->content = '';
-        if (empty($currentcontext)) {
-            return $this->content;
-        }
-        
-        if ($this->page->course->id == SITEID) {
-            $this->content->text .= "site context";
-        }
-
-        if (! empty($this->config->text)) {
-            $this->content->text .= $this->config->text;
-        }
-        
-        $this->content->text .= '<br />' .
-        		get_string('welcomeuser','block_superiframe',$USER);
-        		
-        		
-        $this->content->text .= '<br /><a href="' . $CFG->wwwroot . 
-        	'/blocks/superiframe/view.php">' . 
-        	get_string('gotosuperiframe', 'block_superiframe') . '</a>';	
-        	
-        
-        global $OUTPUT;
-$link = new moodle_url('/blocks/superiframe/view.php',array());
-$this->content->text .=  $OUTPUT->action_link($link, get_string('gotosuperiframe','block_superiframe'), new popup_action('click', $link));
-        	
-        	
-
+		$renderer = $this->page->get_renderer('block_superiframe');
+		$this->content->text = $renderer->fetch_block_content();
         return $this->content;
     }
 
