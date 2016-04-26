@@ -74,13 +74,14 @@ class block_superiframe_renderer extends plugin_renderer_base {
     }
     
     function fetch_size_links(){
+    	$customlink = new moodle_url('/blocks/superiframe/view.php',array('size'=>'custom'));
     	$smalllink = new moodle_url('/blocks/superiframe/view.php',array('size'=>'small'));
     	$mediumlink = new moodle_url('/blocks/superiframe/view.php',array('size'=>'medium'));
     	$biglink = new moodle_url('/blocks/superiframe/view.php',array('size'=>'big'));
     	$links = array();
-    	$links[] = html_writer::link($smalllink, get_string('custom', 'block_superiframe'), array('class'=>'block_superiframe_size_custom'));
+    	$links[] = html_writer::link($customlink, get_string('custom', 'block_superiframe'), array('class'=>'block_superiframe_size_custom'));
     	$links[] = html_writer::link($smalllink, get_string('small', 'block_superiframe'), array('class'=>'block_superiframe_size_small'));
-    	$links[] = html_writer::link($smalllink, get_string('medium', 'block_superiframe'),array('class'=>'block_superiframe_size_medium'));
+    	$links[] = html_writer::link($mediumlink, get_string('medium', 'block_superiframe'),array('class'=>'block_superiframe_size_medium'));
     	$links[] = html_writer::link($biglink, get_string('big', 'block_superiframe'),array('class'=>'block_superiframe_size_big'));
     	return  html_writer::div(implode(' ',$links),'block_superiframe_sizes');
     }
