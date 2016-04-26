@@ -42,3 +42,8 @@ $string['width_details'] = '';
 $string['height_details'] = '';
 $string['pagelayout_details'] = '';
 $string['url_details'] = '';
+
+$string['custom'] = 'Custom';
+$string['small'] = 'Small';
+$string['medium'] = 'Medium';
+$string['big'] = 'Big';

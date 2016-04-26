@@ -33,7 +33,7 @@ class block_superiframe_renderer extends plugin_renderer_base {
 	// and return it.
 	function fetch_block_content(){
 		global $CFG,$USER;
-	
+	 
 		 $content = '';
 		 $content .= '<br />' . get_string('welcomeuser','block_superiframe',$USER) . '<br />';
 	
@@ -54,6 +54,9 @@ class block_superiframe_renderer extends plugin_renderer_base {
 		//lets spice this top part up a bit soon
 		echo '<br>' . fullname($USER);
 		echo '<br>' . $this->output->user_picture($USER);
+		
+		//add the links to specify iframe size
+		echo $this->fetch_size_links();
 
 		//prepare our frame
 		$iframe_atts = array();
@@ -69,5 +72,18 @@ class block_superiframe_renderer extends plugin_renderer_base {
 		echo $this->output->footer();
     
     }
+    
+    function fetch_size_links(){
+    	$smalllink = new moodle_url('/blocks/superiframe/view.php',array('size'=>'small'));
+    	$mediumlink = new moodle_url('/blocks/superiframe/view.php',array('size'=>'medium'));
+    	$biglink = new moodle_url('/blocks/superiframe/view.php',array('size'=>'big'));
+    	$links = array();
+    	$links[] = html_writer::link($smalllink, get_string('custom', 'block_superiframe'), array('class'=>'block_superiframe_size_custom'));
+    	$links[] = html_writer::link($smalllink, get_string('small', 'block_superiframe'), array('class'=>'block_superiframe_size_small'));
+    	$links[] = html_writer::link($smalllink, get_string('medium', 'block_superiframe'),array('class'=>'block_superiframe_size_medium'));
+    	$links[] = html_writer::link($biglink, get_string('big', 'block_superiframe'),array('class'=>'block_superiframe_size_big'));
+    	return  html_writer::div(implode(' ',$links),'block_superiframe_sizes');
+    }
+
 
 }
