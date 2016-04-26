@@ -1,0 +1,11 @@
+[13-Apr-2016 22:24:09 Europe/London] PHP Notice:  Undefined variable: renderer in /home/chipmunkyou/public_html/moodle/poodll3/blocks/superiframe/view.php on line 27
+[13-Apr-2016 22:24:09 Europe/London] PHP Fatal error:  Call to a member function footer() on a non-object in /home/chipmunkyou/public_html/moodle/poodll3/blocks/superiframe/view.php on line 27
+[13-Apr-2016 22:45:30 Europe/London] PHP Fatal error:  Call to undefined method theme_clean_core_renderer::fullname() in /home/chipmunkyou/public_html/moodle/poodll3/blocks/superiframe/view.php on line 26
+[13-Apr-2016 22:47:39 Europe/London] PHP Fatal error:  Call to undefined method stdClass::fullname() in /home/chipmunkyou/public_html/moodle/poodll3/blocks/superiframe/view.php on line 26
+[13-Apr-2016 22:48:19 Europe/London] PHP Notice:  Undefined variable: fullname in /home/chipmunkyou/public_html/moodle/poodll3/blocks/superiframe/view.php on line 26
+[13-Apr-2016 22:48:19 Europe/London] PHP Fatal error:  Function name must be a string in /home/chipmunkyou/public_html/moodle/poodll3/blocks/superiframe/view.php on line 26
+[13-Apr-2016 22:50:27 Europe/London] PHP Notice:  Undefined variable: fullname in /home/chipmunkyou/public_html/moodle/poodll3/blocks/superiframe/view.php on line 26
+[13-Apr-2016 22:50:27 Europe/London] PHP Fatal error:  Function name must be a string in /home/chipmunkyou/public_html/moodle/poodll3/blocks/superiframe/view.php on line 26
+[14-Apr-2016 13:16:49 Europe/London] PHP Notice:  Undefined variable: url in /home/chipmunkyou/public_html/moodle/poodll3/blocks/superiframe/view.php on line 37
+[14-Apr-2016 13:17:27 Europe/London] PHP Notice:  Undefined variable: url in /home/chipmunkyou/public_html/moodle/poodll3/blocks/superiframe/view.php on line 37
+[14-Apr-2016 13:17:46 Europe/London] PHP Notice:  Undefined variable: url in /home/chipmunkyou/public_html/moodle/poodll3/blocks/superiframe/view.php on line 37
