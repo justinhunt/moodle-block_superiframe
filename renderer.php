@@ -31,13 +31,13 @@ class block_superiframe_renderer extends plugin_renderer_base {
 
 	//In this function we fetch all the content that the goes in the block
 	// and return it.
-	function fetch_block_content(){
+	function fetch_block_content($blockid){
 		global $CFG,$USER;
 	 
 		 $content = '';
 		 $content .= '<br />' . get_string('welcomeuser','block_superiframe',$USER) . '<br />';
 	
-		$link = new moodle_url('/blocks/superiframe/view.php',array());
+		$link = new moodle_url('/blocks/superiframe/view.php',array('blockid'=>$blockid));
 		$content .= html_writer::link($link, get_string('gotosuperiframe', 'block_superiframe'));
 
 		return $content;

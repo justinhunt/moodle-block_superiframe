@@ -47,3 +47,4 @@ $string['custom'] = 'Custom';
 $string['small'] = 'Small';
 $string['medium'] = 'Medium';
 $string['big'] = 'Big';
+$string['size'] = 'Size';

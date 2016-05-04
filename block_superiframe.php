@@ -33,6 +33,9 @@ class block_superiframe extends block_base {
     function get_content() {
         global $CFG, $OUTPUT, $USER;
 
+//echo $this->instance->id;
+//print_r($this);
+//die;
         if ($this->content !== null) {
             return $this->content;
         }
@@ -49,7 +52,7 @@ class block_superiframe extends block_base {
         $this->content->text = '';
 
 		$renderer = $this->page->get_renderer('block_superiframe');
-		$this->content->text = $renderer->fetch_block_content();
+		$this->content->text = $renderer->fetch_block_content($this->instance->id);
         return $this->content;
     }
 

@@ -31,12 +31,13 @@
 require('../../config.php');
 require_once('../../lib/moodlelib.php');
 
-//fetch the size of the iframe
-$size = optional_param('size','medium',PARAM_TEXT);
+
+//fetch the blockid whose settings we should use
+$blockid = required_param('blockid',PARAM_INT);
 
 //set the url of the $PAGE
 //note we do this before require_login preferably
-$PAGE->set_url('/blocks/superiframe/view.php',array('size'=>$size));
+$PAGE->set_url('/blocks/superiframe/view.php',array('blockid'=>$blockid));
 require_login();
 
 //get our config
@@ -52,7 +53,17 @@ $PAGE->navbar->add(get_string('pluginname', 'block_superiframe'));
 
 $renderer = $PAGE->get_renderer('block_superiframe');
 
-switch($size){
+//fetch config. Use defaults if somehow we didnt get any
+$configdata = $DB->get_field('block_instances', 'configdata', array('id' => $blockid));
+if($configdata){
+	$config = unserialize(base64_decode($configdata));
+}else{
+	$config = $def_config; 
+}
+
+
+switch($config->size){
+	default:
 	case 'custom':  
 		$width = $def_config->width; 
 		$height = $def_config->height;
@@ -69,12 +80,10 @@ switch($size){
 		$width = 1024; 
 		$height = 768;
 		break;
-	
-
 
 }
 
-$renderer->display_view_page($def_config->url, $width, $height);
+$renderer->display_view_page($config->url, $width, $height);
 
 return;
 
