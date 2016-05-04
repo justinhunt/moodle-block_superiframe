@@ -31,6 +31,8 @@
 require('../../config.php');
 require_once('../../lib/moodlelib.php');
 
+//fetch the size
+$size = optional_param('size','none',PARAM_TEXT);
 
 //fetch the blockid whose settings we should use
 $blockid = required_param('blockid',PARAM_INT);
@@ -61,8 +63,11 @@ if($configdata){
 	$config = $def_config; 
 }
 
+if($size=='none'){
+	$size=$config->size;
+}
 
-switch($config->size){
+switch($size){
 	default:
 	case 'custom':  
 		$width = $def_config->width; 
@@ -83,7 +88,7 @@ switch($config->size){
 
 }
 
-$renderer->display_view_page($config->url, $width, $height);
+$renderer->display_view_page($blockid,$config->url, $width, $height);
 
 return;
 

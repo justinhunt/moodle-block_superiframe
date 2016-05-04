@@ -44,7 +44,7 @@ class block_superiframe_renderer extends plugin_renderer_base {
 	}
 
     //this function aggregates all the pieces of content of the view page and displays them
-    function display_view_page($url, $width, $height){
+    function display_view_page($blockid,$url, $width, $height){
     	global $USER;
     	
 		// start output to browser
@@ -56,7 +56,7 @@ class block_superiframe_renderer extends plugin_renderer_base {
 		echo '<br>' . $this->output->user_picture($USER);
 		
 		//add the links to specify iframe size
-		echo $this->fetch_size_links();
+		echo $this->fetch_size_links($blockid);
 
 		//prepare our frame
 		$iframe_atts = array();
@@ -73,11 +73,11 @@ class block_superiframe_renderer extends plugin_renderer_base {
     
     }
     
-    function fetch_size_links(){
-    	$customlink = new moodle_url('/blocks/superiframe/view.php',array('size'=>'custom'));
-    	$smalllink = new moodle_url('/blocks/superiframe/view.php',array('size'=>'small'));
-    	$mediumlink = new moodle_url('/blocks/superiframe/view.php',array('size'=>'medium'));
-    	$biglink = new moodle_url('/blocks/superiframe/view.php',array('size'=>'big'));
+    function fetch_size_links($blockid){
+    	$customlink = new moodle_url('/blocks/superiframe/view.php',array('blockid'=>$blockid,'size'=>'custom'));
+    	$smalllink = new moodle_url('/blocks/superiframe/view.php',array('blockid'=>$blockid,'size'=>'small'));
+    	$mediumlink = new moodle_url('/blocks/superiframe/view.php',array('blockid'=>$blockid,'size'=>'medium'));
+    	$biglink = new moodle_url('/blocks/superiframe/view.php',array('blockid'=>$blockid,'size'=>'big'));
     	$links = array();
     	$links[] = html_writer::link($customlink, get_string('custom', 'block_superiframe'), array('class'=>'block_superiframe_size_custom'));
     	$links[] = html_writer::link($smalllink, get_string('small', 'block_superiframe'), array('class'=>'block_superiframe_size_small'));
