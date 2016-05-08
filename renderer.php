@@ -66,6 +66,10 @@ class block_superiframe_renderer extends plugin_renderer_base {
         $iframe_atts['class']='block_superiframe_iframe';
         $iframe = html_writer::tag('iframe', '', $iframe_atts);
 		echo '<br>' . $iframe;
+		
+		global $DB,$USER;
+		$records = $DB->get_record('user',array('id'=>$USER->id));
+		echo $this->display_in_table($records);
 
 		//send footer out to browser
 		//never forget to do this ...!
@@ -87,4 +91,4 @@ class block_superiframe_renderer extends plugin_renderer_base {
     }
 
 
-}
+}//end of class
